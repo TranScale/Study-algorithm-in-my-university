@@ -25,9 +25,7 @@ def Dijkstra(graph, start):
 
             if distance < distances[neighbour]:
                 distances[neighbour] = distance
-
-    heapq.heappush(queue,(neighbour,weight))
-
+                heapq.heappush(queue,(neighbour,distance))
     return distances
     
 
