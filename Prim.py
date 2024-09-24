@@ -1,4 +1,13 @@
 #Trần Viết Hải - 225051529, Bài tập Prim's MST
+'''
+Thuật toán này là thuật toán tìm kiếm đường đi ngắn nhất, tối ưu nhất trong thời điểm mà nó tìm kiếm,
+không quan tâm đến những vấn đề phát sinh phía sau.
+
+vd: A -- 2 -- B -- 10 -- D
+    A -- 3 -- C -- 5 -- D
+Mục tiêu: A đến D
+Theo ví dụ trên thì thuật toán Prim sẽ chọn điểm B làm điểm kế tiếp do 2 < 3, không quan B đến D tốn 10 mà C đến D chỉ tốn 5
+'''
 import heapq
 graph = {
     'A':[('C',6)],
