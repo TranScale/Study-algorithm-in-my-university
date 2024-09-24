@@ -1,4 +1,20 @@
 #Trần Viết Hải - 225051529
+'''
+Thuật toán này là thuật toán tìm kiếm đường đi ngắn nhất từ đỉnh gốc đến các đỉnh khác,
+
+
+vd: A -- 2 -- B -- 10 -- D 
+    A -- 3 -- C -- 5 -- D
+Mục tiêu: A đến D
+Theo thuật toán Dijkstra, thì thuật toán sẽ chọn hướng tối ưu nhất là đỉnh C vì:
+    - Khoảng cách A đến C: 3
+    - Khoảng cách C đến D: 10
+    --> Vậy khoảng cách A đến D: 3 + 5 = 8
+Vậy nếu A đến D bằng 6 thì nó sẽ chọn đến D hay C ??
+    A -- 6 -- D
+Theo Prim, thì thuật toán sẽ chọn đường ngắn nhất trong thời điểm nó xét thì đó là B do A đến B có 2.
+Nhưng theo Dijkstra, thì thuật toán sẽ chọn D ngay vì lúc này khoảng cách A đến D chỉ có 6.
+'''
 import heapq
 graph = {
     '0':[('1',2),('2',6)],
@@ -28,8 +44,5 @@ def Dijkstra(graph, start):
                 heapq.heappush(queue,(neighbour,distance))
     return distances
     
-
-
-
 a = Dijkstra(graph,'0')
 print(a)
